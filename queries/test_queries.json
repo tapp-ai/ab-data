@@ -1,0 +1,9 @@
+[
+    "SELECT * FROM crm.contacts WHERE crm.contacts.custom_variables ->> 'f19e9eb8-936b-4b59-b53b-b9e98539b666' NOT ILIKE '0' OR  crm.contacts.custom_variables ->> 'fb0b1147-c751-407a-bb29-11b7ae73f5c1' NOT ILIKE '1' OR crm.contacts.custom_variables ->> '34ba743f-59bc-4436-a850-5f280c824bb1' NOT ILIKE 'founder' LIMIT 50;",
+    "SELECT COUNT(*) FROM crm.contacts WHERE crm.contacts.custom_variables ->> 'f19e9eb8-936b-4b59-b53b-b9e98539b666' NOT ILIKE '0' OR  crm.contacts.custom_variables ->> 'fb0b1147-c751-407a-bb29-11b7ae73f5c1' NOT ILIKE '1' OR crm.contacts.custom_variables ->> '34ba743f-59bc-4436-a850-5f280c824bb1' NOT ILIKE 'founder';",
+    "SELECT COUNT(*) FROM crm.contacts WHERE crm.contacts.custom_variables ? 'f19e9eb8-936b-4b59-b53b-b9e98539b666';"
+]
+
+
+
+
