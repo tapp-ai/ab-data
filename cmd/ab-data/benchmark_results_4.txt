@@ -1,0 +1,3 @@
+Query SELECT COUNT(*) FROM crm.contacts WHERE crm.contacts.custom_variables ? 'd017d698-0579-4067-a22e-17deca9a26dc' AND crm.contacts.custom_variables ->> 'd017d698-0579-4067-a22e-17deca9a26dc' ILIKE 'opportunity';: 1 rows in 2.287733834s
+Columns: [count]
+RowData: [1476]

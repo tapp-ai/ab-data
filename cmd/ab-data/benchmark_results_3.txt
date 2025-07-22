@@ -1,0 +1,3 @@
+Query SELECT COUNT(*) FROM crm.contacts WHERE crm.contacts.custom_variables ? 'f19e9eb8-936b-4b59-b53b-b9e98539b666';: 1 rows in 1.777974917s
+Columns: [count]
+RowData: [336335]

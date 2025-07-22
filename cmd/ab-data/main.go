@@ -2,9 +2,7 @@ package main
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
-	"time"
 
 	"github.com/relentlo/ab-data/internal/core"
 	"github.com/relentlo/ab-data/internal/prompt"
@@ -75,28 +73,28 @@ func main() {
 		return
 	}
 
-	rows, err := sqlDB.Query("SELECT * FROM crm.contacts limit 1")
-	if err != nil {
-		fmt.Println("Error querying contacts", err)
-		return
-	}
-	defer rows.Close()
+	// rows, err := sqlDB.Query("SELECT * FROM crm.contacts limit 1")
+	// if err != nil {
+	// 	fmt.Println("Error querying contacts", err)
+	// 	return
+	// }
+	// defer rows.Close()
 
-	for rows.Next() {
-		var id string
-		var businessId string
-		var email string
-		var companyId string
-		var createdAt time.Time
-		var updatedAt time.Time
-		var customVariables json.RawMessage
-		err := rows.Scan(&id, &businessId, &email, &companyId, &createdAt, &updatedAt, &customVariables)
-		if err != nil {
-			fmt.Println("Error scanning row", err)
-			return
-		}
-		fmt.Println(id, businessId, email, companyId, createdAt, updatedAt, customVariables)
-	}
+	// for rows.Next() {
+	// 	var id string
+	// 	var businessId string
+	// 	var email string
+	// 	var companyId string
+	// 	var createdAt time.Time
+	// 	var updatedAt time.Time
+	// 	var customVariables json.RawMessage
+	// 	err := rows.Scan(&id, &businessId, &email, &companyId, &createdAt, &updatedAt, &customVariables)
+	// 	if err != nil {
+	// 		fmt.Println("Error scanning row", err)
+	// 		return
+	// 	}
+	// 	fmt.Println(id, businessId, email, companyId, createdAt, updatedAt, customVariables)
+	// }
 
 	// Ask users for path to the queries file and it should unmarshal into a list of queries
 	for {
